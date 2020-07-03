@@ -1,19 +1,28 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { addList } from '../store/actions'
 
 class KeyTest extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            lists: ['a', 'b', 'c'],
+            count: 'a',
         };
+        this.dispatch = this.props.dispatch;
     }
     add() {
-        this.setState((preState) => ({ lists: ['d', ...preState.lists] }));
+        this.setState((preState) => (
+            {
+                count: `${preState.count}a`,
+            }
+        ), () => {
+            this.dispatch(addList(this.state.count));
+        });
     }
     render() {
         return (
             <Fragment>
-                {this.state.lists.map((item, index) => {
+                {this.props.lists.map((item, index) => {
                     return (
                         <input key={item} placeholder={item} type="text" id={item} />
                     )
@@ -24,4 +33,9 @@ class KeyTest extends Component {
     }
 }
 
-export default KeyTest;
+const getLists = (state) => {
+    return {
+        lists: state.lists,
+    }
+}
+export default connect(getLists)(KeyTest);
