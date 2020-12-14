@@ -2,6 +2,10 @@
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
+  "description": "learn React",
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.2.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -20,10 +24,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "plugin:react-hooks/recommended",
-      "react-app"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -36,8 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
