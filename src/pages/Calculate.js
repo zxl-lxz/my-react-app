@@ -1,10 +1,12 @@
-import React from 'react';
-import BoilingVerdict from './Boling';
+import React, { Suspense } from 'react';
+// import BoilingVerdict from './Boling';
 import Temp from './Temp';
 
 let b = {
     foo: [1, 2, 3],
 };
+
+const BoilingVerdict = React.lazy(() => import('./Boling'));
 
 class Calculator extends React.Component {
     constructor(props) {
@@ -37,14 +39,27 @@ class Calculator extends React.Component {
             celsius: ((temp - 32) * 5) / 9,
         });
     }
-    
+
+    static getDerivedStateFromProps(props, state) {
+        // console.log(props, state);
+        return {
+            celsius: '',
+            fahrenheit: '',
+            a: {
+                foo: [1, 2, 3],
+            }
+        };
+    }
+
     render() {
         return (
             <div className="wrap">
                 <Temp temp={this.state.celsius} handleChange={(e) => this.handleCChange(e)} />
                 <Temp temp={this.state.fahrenheit} handleChange={(e) => this.handleFChange(e)} />
-                <BoilingVerdict celsius={this.state.celsius} />
-        <span>{this.state.a.foo.length}</span>
+                <Suspense fallback={<div>...loading</div>}>
+                    <BoilingVerdict celsius={this.state.celsius} />
+                </Suspense>
+                <span>{this.state.a.foo.length}</span>
             </div>
         )
     }
