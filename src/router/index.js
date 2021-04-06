@@ -5,6 +5,7 @@ const Calculate = lazy(() => import('../pages/Calculate'));
 const KeyTest = lazy(() => import('../pages/KeyTest'));
 const BoilingVerdict = lazy(() => import('../pages/Boling'));
 const HookTest = lazy(() => import('../pages/HookTest'));
+const RefTest = lazy(() => import('../pages/refTest'));
 
 // import Calculate from '../pages/Calculate';
 // import KeyTest from '../pages/KeyTest';
@@ -20,6 +21,7 @@ const BasicRoute = () => {
                     <Route exact path="/keyTest" component={KeyTest} />
                     <Route exact path="/boilingVerdict" component={BoilingVerdict} />
                     <Route exact path="/hookTest" component={HookTest} />
+                    <Route exact path="/refTest" component={RefTest} />
                 </Switch>
             </Suspense>
         </HashRouter>
