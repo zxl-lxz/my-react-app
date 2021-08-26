@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 
 function EffectTest() {
     const [count, setCount] = useState(0);

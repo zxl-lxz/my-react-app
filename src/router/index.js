@@ -7,6 +7,7 @@ const BoilingVerdict = lazy(() => import('../pages/Boling'));
 const HookTest = lazy(() => import('../pages/HookTest'));
 const RefTest = lazy(() => import('../pages/refTest'));
 const EffectTest = lazy(() => import('../pages/effectTest'));
+const JsxTest = lazy(() => import('../pages/JSXTest.jsx'));
 
 // import Calculate from '../pages/Calculate';
 // import KeyTest from '../pages/KeyTest';
@@ -24,6 +25,7 @@ const BasicRoute = () => {
                     <Route exact path="/hookTest" component={HookTest} />
                     <Route exact path="/refTest" component={RefTest} />
                     <Route exact path="/effectTest" component={EffectTest} />
+                    <Route exact path="/jsxTest" component={JsxTest} />
                 </Switch>
             </Suspense>
         </HashRouter>
