@@ -11,6 +11,7 @@ const JsxTest = lazy(() => import('../pages/JSXTest.jsx'));
 const StateTest = lazy(() => import('../pages/StateTest.jsx'));
 const UseStateTest = lazy(() => import('../pages/useStateTest.jsx'));
 const PropsTest = lazy(() => import('../pages/PropsTest/index.jsx'));
+const RefTest2 = lazy(() => import('../pages/RefTest/index.jsx'));
 
 // import Calculate from '../pages/Calculate';
 // import KeyTest from '../pages/KeyTest';
@@ -32,7 +33,7 @@ const BasicRoute = () => {
                     <Route exact path="/stateTest" component={StateTest} />
                     <Route exact path="/useStateTest" component={UseStateTest} />
                     <Route exact path="/propsTest" component={PropsTest} />
-
+                    <Route exact path="/refTest2" component={RefTest2} />
                 </Switch>
             </Suspense>
         </HashRouter>
