@@ -14,6 +14,8 @@ const PropsTest = lazy(() => import('../pages/PropsTest/index.jsx'));
 const RefTest2 = lazy(() => import('../pages/RefTest/index.jsx'));
 const RenderTest = lazy(() => import('../pages/renderTest/RenderTest'));
 const TimeSlice = lazy(() => import('../pages/TimeSlice/Index.jsx'));
+const EventTest = lazy(() => import('../pages/eventTest/EventTest'));
+
 
 // import Calculate from '../pages/Calculate';
 // import KeyTest from '../pages/KeyTest';
@@ -38,6 +40,7 @@ const BasicRoute = () => {
                     <Route exact path="/refTest2" component={RefTest2} />
                     <Route exact path="/renderTest" component={RenderTest} />
                     <Route exact path="/timeSlice" component={TimeSlice} />
+                    <Route exact path="/eventTest" component={EventTest} />
                 </Switch>
             </Suspense>
         </HashRouter>

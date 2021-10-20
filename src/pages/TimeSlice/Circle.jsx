@@ -22,7 +22,7 @@ function Circle({ position }){
             background : getColor(),
             ...getPostion(position)
         }
-    },[])
+    },[position])
     return <div style={style} className="circle" />
 }
 
