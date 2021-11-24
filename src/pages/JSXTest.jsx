@@ -14,7 +14,7 @@ class JsxTest extends React.Component{
                 <div>hello,world</div>
                 { /* fragment 类型 */ }
                 <React.Fragment>
-                    <div> <span role="img" aria-label="man">👽👽</span></div>
+                    <div><span role="img" aria-label="man">👽👽</span></div>
                 </React.Fragment>
                 { /* text 文本类型 */ }
                 my name is alien 
@@ -30,6 +30,11 @@ class JsxTest extends React.Component{
             </div>
         )
         const { children } = reactElement.props;
+        
+        console.log(
+            React.Children.map(children, (item) => item), 'mapChildren'
+        );
+        console.log(React.Children.count(children), 'count');
 
         /* 第1步 ： 扁平化 children  */
         const flatChildren = React.Children.toArray(children)

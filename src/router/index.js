@@ -15,6 +15,8 @@ const RefTest2 = lazy(() => import('../pages/RefTest/index.jsx'));
 const RenderTest = lazy(() => import('../pages/renderTest/RenderTest'));
 const TimeSlice = lazy(() => import('../pages/TimeSlice/Index.jsx'));
 const EventTest = lazy(() => import('../pages/eventTest/EventTest'));
+const ReactTopApiTest = lazy(() => import('../pages/ReactTopAPITest'));
+const HooksTest = lazy(() => import('../pages/hooksTest'));
 
 
 // import Calculate from '../pages/Calculate';
@@ -41,6 +43,8 @@ const BasicRoute = () => {
                     <Route exact path="/renderTest" component={RenderTest} />
                     <Route exact path="/timeSlice" component={TimeSlice} />
                     <Route exact path="/eventTest" component={EventTest} />
+                    <Route exact path="/reactTopAPITest" component={ReactTopApiTest} />
+                    <Route exact path="/hookstest" component={HooksTest} />
                 </Switch>
             </Suspense>
         </HashRouter>
