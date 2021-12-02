@@ -1,4 +1,4 @@
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
 
 const PropsTest = lazy(() => import('../pages/PropsTest/index.jsx'));
@@ -8,10 +8,12 @@ const TimeSlice = lazy(() => import('../pages/TimeSlice/Index.jsx'));
 const EventTest = lazy(() => import('../pages/eventTest/EventTest'));
 const ReactTopApiTest = lazy(() => import('../pages/ReactTopAPITest'));
 const HooksTest = lazy(() => import('../pages/hooksTest'));
+const WrappedDynamicFieldSet = lazy(() => import('../pages/AntDtest/FormTest'));
+
 
 const BasicRoute = () => {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Suspense fallback={<div>loading...</div>}>
                 <Switch>
                     <Route exact path="/propsTest" component={PropsTest} />
@@ -21,9 +23,10 @@ const BasicRoute = () => {
                     <Route exact path="/eventTest" component={EventTest} />
                     <Route exact path="/reactTopAPITest" component={ReactTopApiTest} />
                     <Route exact path="/hookstest" component={HooksTest} />
+                    <Route exact path="/antDTest/formTest" component={WrappedDynamicFieldSet} />
                 </Switch>
             </Suspense>
-        </HashRouter>
+        </BrowserRouter>
     )
 }
 

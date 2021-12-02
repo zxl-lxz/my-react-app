@@ -13,7 +13,7 @@ const Route = (props) => {
     }
     return props.path ? matchPath(location.pathname, props) : context.match;
   }, [context.match, props, location.pathname]);
-  const match = isMatch();
+  const match = isMatch;
 
   // 传递给嵌套路由
   const newRouterProps = {...context, location, match};

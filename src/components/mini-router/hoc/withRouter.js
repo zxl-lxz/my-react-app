@@ -5,10 +5,12 @@ import { RouterContext } from '../Router';
 
 const withRouter = (Component) => {
   const WrapComponent = (props) => {
+    const { WrappedComponentref, ...restProps } = props;
     const context = useContext(RouterContext);
     return (
       <Component
-        {...props}
+        ref={WrappedComponentref}
+        {...restProps}
         {...context}
       />
     )
