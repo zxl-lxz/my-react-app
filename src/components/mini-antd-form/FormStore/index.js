@@ -16,12 +16,13 @@ import { unstable_batchedUpdates } from "react-dom";
 
 /* 对外接口  */
 const formInstanceApi = [
+  'getFieldModel',
   'setCallback',
   'dispatch',
   'registerValidateFields',
   'resetFields',
-  'setFields',
   'setFieldsValue',
+  'setFieldValue',
   'getFieldsValue',
   'getFieldValue',
   'validateFields',
@@ -51,6 +52,11 @@ class FormStore {
     // 表单的默认值
     this.defaultFieldsValue = defaultFieldsValue;
 
+  }
+
+  getFieldModel(name) {
+    const model = this.model[name];
+    return model || {};
   }
 
   // 暴露 formInstanceApi 的所有方法
@@ -153,7 +159,7 @@ class FormStore {
     return result;
   }
   // 设置全部表单项的值
-  setFields(obj) {
+  setFieldsValue(obj) {
     if (typeof obj !== 'object') return;
     Object.entries(obj).forEach((nameAndValue) => {
       const [name, value] = nameAndValue;
