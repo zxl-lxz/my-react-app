@@ -2,11 +2,11 @@ import React, {
   useContext, useCallback, useEffect, useRef,
 } from 'react';
 
-export const logContext = React.createContext();
+export const LogContext = React.createContext();
 
 const useLog = () => {
   const dom = useRef(null);
-  const message = useContext(logContext);
+  const message = useContext(LogContext);
 
   const reportMessage = useCallback((element, type) => {
     if (type === 'click') {
